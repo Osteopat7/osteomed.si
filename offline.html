@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nema internetske veze | Ordinacija za kralježnicu u Mariboru</title>
+<meta content="Privatna ordinacija za kralježnicu manualna terapija i osteopatija u Mariboru. Web stranica je trenutno nedostupna." name="description"/>
+<link href="../favicon.ico" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+ :root {
+ --bg: #050505;
+ --panel: #0d0d0d;
+ --gold: #d6c2a3;
+ --accent: #00a8b5;
+ --text: #f7f4ee;
+ --muted: rgba(255, 255, 255, 0.65);
+ --line: rgba(214, 194, 163, 0.12);
+ }
+
+ * {
+ box-sizing: border-box;
+ }
+
+ html {
+ min-height: 100%;
+ background: var(--bg);
+ }
+
+ body {
+ margin: 0;
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ font-family: Inter, Arial, sans-serif;
+ color: var(--text);
+ background:
+ radial-gradient(
+ circle at top,
+ rgba(0, 168, 181, 0.08),
+ transparent 42%
+ ),
+ var(--bg);
+ text-align: center;
+ }
+
+ .offline-container {
+ width: min(100%, 620px);
+ padding: clamp(24px, 5vw, 48px);
+ background:
+ linear-gradient(
+ 145deg,
+ rgba(255, 255, 255, 0.035),
+ rgba(255, 255, 255, 0.01)
+ ),
+ var(--panel);
+ border: 1px solid var(--line);
+ border-radius: 22px;
+ box-shadow:
+ 0 30px 80px rgba(0, 0, 0, 0.65),
+ inset 0 1px 0 rgba(255, 255, 255, 0.04);
+ }
+
+ .brand {
+ margin-bottom: 28px;
+ font-family: "Playfair Display", serif;
+ font-size: clamp(1.2rem, 4vw, 1.7rem);
+ font-weight: 600;
+ letter-spacing: 0.18em;
+ color: var(--gold);
+ }
+
+ .offline-image {
+ display: block;
+ width: 100%;
+ max-width: 340px;
+ height: auto;
+ margin: 0 auto 32px;
+ border-radius: 16px;
+ border: 1px solid var(--line);
+ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+ }
+
+ .eyebrow {
+ margin-bottom: 12px;
+ color: var(--accent);
+ font-size: 0.78rem;
+ font-weight: 600;
+ letter-spacing: 0.25em;
+ text-transform: uppercase;
+ }
+
+ h1 {
+ margin: 0 0 18px;
+ font-family: "Playfair Display", serif;
+ font-size: clamp(2rem, 7vw, 3.2rem);
+ line-height: 1.1;
+ font-weight: 600;
+ color: var(--gold);
+ }
+
+ p {
+ max-width: 480px;
+ margin: 0 auto 12px;
+ color: var(--muted);
+ font-size: 1rem;
+ line-height: 1.7;
+ }
+
+ .offline-status {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ margin: 22px 0 28px;
+ padding: 9px 16px;
+ border: 1px solid rgba(0, 168, 181, 0.25);
+ border-radius: 999px;
+ color: var(--accent);
+ font-size: 0.82rem;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ .offline-status::before {
+ content: "";
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: var(--accent);
+ box-shadow: 0 0 12px rgba(0, 168, 181, 0.8);
+ }
+
+ button {
+ min-width: 190px;
+ padding: 14px 28px;
+ border: 0;
+ border-radius: 999px;
+ background: var(--accent);
+ color: #fff;
+ font-family: Inter, Arial, sans-serif;
+ font-size: 0.95rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition:
+ transform 0.3s ease,
+ background-color 0.3s ease,
+ box-shadow 0.3s ease;
+ }
+
+ button:hover {
+ background: #0797a2;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 30px rgba(0, 168, 181, 0.25);
+ }
+
+ button:active {
+ transform: translateY(0);
+ }
+
+ button:focus-visible {
+ outline: 3px solid rgba(0, 168, 181, 0.35);
+ outline-offset: 4px;
+ }
+
+ .footer {
+ margin-top: 32px;
+ color: rgba(255, 255, 255, 0.35);
+ font-size: 0.78rem;
+ letter-spacing: 0.05em;
+ }
+
+ @media (max-width: 480px) {
+ body {
+ padding: 16px;
+ }
+
+ .offline-container {
+ border-radius: 18px;
+ }
+
+ .offline-image {
+ margin-bottom: 24px;
+ }
+
+ h1 {
+ font-size: 2rem;
+ }
+
+ p {
+ font-size: 0.95rem;
+ }
+
+ button {
+ width: 100%;
+ }
+ }
+ 
+ .lang-dropdown {
+ position: relative;
+ margin-left: 14px;
+ }
+ .lang-dropdown > summary.lang-dropdown-btn {
+ list-style: none;
+ cursor: pointer;
+ display: inline-flex;
+ align-items: center;
+ gap: 5px;
+ padding: 7px 9px;
+ border: 1px solid rgba(214, 194, 163, .45);
+ border-radius: 2px;
+ background: rgba(214, 194, 163, .16);
+ color: var(--gold);
+ font-size: .68rem;
+ letter-spacing: .08em;
+ font-weight: 600;
+ line-height: 1;
+ user-select: none;
+ transition: background .25s ease;
+ }
+ .lang-dropdown > summary.lang-dropdown-btn::-webkit-details-marker {
+ display: none;
+ }
+ .lang-dropdown > summary.lang-dropdown-btn::marker {
+ content: "";
+ }
+ .lang-dropdown > summary.lang-dropdown-btn span {
+ font-size: .6rem;
+ transition: transform .25s ease;
+ }
+ .lang-dropdown[open] > summary.lang-dropdown-btn span {
+ transform: rotate(180deg);
+ }
+ .lang-dropdown-menu {
+ position: absolute;
+ top: calc(100% + 8px);
+ right: 0;
+ background: #0d0d0d;
+ border: 1px solid var(--line);
+ border-radius: 10px;
+ padding: 6px;
+ display: flex;
+ flex-direction: column;
+ min-width: 168px;
+ box-shadow: 0 24px 50px rgba(0, 0, 0, .55);
+ z-index: 10000;
+ }
+ .lang-dropdown-menu a {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 9px 11px;
+ border-radius: 7px;
+ color: var(--text);
+ font-size: .78rem;
+ letter-spacing: .02em;
+ text-decoration: none;
+ white-space: nowrap;
+ transition: background .25s ease, color .25s ease;
+ }
+ .lang-dropdown-menu a:hover {
+ background: rgba(0, 168, 181, .08);
+ color: var(--accent);
+ }
+ .lang-dropdown-menu a.active {
+ color: var(--gold);
+ background: rgba(214, 194, 163, .12);
+ }
+ .lang-dropdown-menu a .code {
+ font-weight: 700;
+ font-size: .68rem;
+ letter-spacing: .06em;
+ opacity: .6;
+ min-width: 20px;
+ }
+</style>
+<meta content="noindex, nofollow, noarchive" name="robots"/>
+<link href="/offline.html" hreflang="sl" rel="alternate"/><link href="/de/offline.html" hreflang="de" rel="alternate"/><link href="/hr/offline.html" hreflang="hr" rel="alternate"/><link href="/it/offline.html" hreflang="it" rel="alternate"/><link href="/en/offline.html" hreflang="en" rel="alternate"/><link href="/offline.html" hreflang="x-default" rel="alternate"/><link href="https://osteomed.si/hr/offline.html" rel="canonical"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zašto je stranica nedostupna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stranica je privremeno nedostupna zbog tehničkih radova ili ažuriranja sadržaja. Radimo na otklanjanju problema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kako kontaktirati ordinaciji u Mariboru?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nazovite +386 2 123 4567 ili pošaljite e‑mail na info@osteomed.si. Recepcija radi od ponedjeljka do petka, 08:00–17:00."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Što da učinim u hitnom slučaju?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Za hitne slučajeve odmah nazovite 112 ili idite u najbližu hitnu službu. Ne čekajte ponovno uspostavljanje stranice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mogu li promijeniti ili otkazati termin putem e‑maila?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Pošaljite ime pacijenta, datum i vrijeme termina na info@osteomed.si ili nas kontaktirajte telefonom i mi ćemo obraditi vaš zahtjev."
+      }
+    }
+  ]
+}</script><!-- ============================= -->
+<!-- OPEN GRAPH / TWITTER -->
+<!-- ============================= -->
+<!-- ============================= -->
+<!-- END OPEN GRAPH -->
+<!-- ============================= -->
+<!-- ============================= -->
+<!-- OPEN GRAPH / TWITTER -->
+<!-- ============================= -->
+<meta content="website" property="og:type"/>
+<meta content="hr_HR" property="og:locale"/>
+<meta content="Dr. Sergey Verbitskiy" property="og:site_name"/>
+<meta content="https://osteomed.si/hr/offline.html" property="og:url"/>
+<meta content="Nema internetske veze | Ordinacija za kralježnicu u Mariboru" property="og:title"/>
+<meta content="Privatna ordinacija za kralježnicu manualna terapija i osteopatija u Mariboru. Web stranica je trenutno nedostupna." property="og:description"/>
+<meta content="https://osteomed.si/images/hr-preview-offline-osteomed.webp" property="og:image"/>
+<meta content="https://osteomed.si/images/hr-preview-offline-osteomed.webp" property="og:image:secure_url"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="image/webp" property="og:image:type"/>
+<meta content="Nema internetske veze | Ordinacija za kralježnicu u Mariboru" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Nema internetske veze | Ordinacija za kralježnicu u Mariboru" name="twitter:title"/>
+<meta content="Privatna ordinacija za kralježnicu manualna terapija i osteopatija u Mariboru. Web stranica je trenutno nedostupna." name="twitter:description"/>
+<meta content="https://osteomed.si/images/hr-preview-offline-osteomed.webp" name="twitter:image"/>
+<meta content="Nema internetske veze | Ordinacija za kralježnicu u Mariboru" name="twitter:image:alt"/>
+<!-- ============================= -->
+<!-- END OPEN GRAPH -->
+<!-- ============================= -->
+</head>
+<section class="section seo-rich-content" id="seo-informationen" style="background:var(--bg);"><div class="container"><div class="eyebrow">Dodatne informacije</div><h2 class="section-title">Ordinacija za kralježnicu u Mariboru — stranica privremeno nedostupna</h2><p class="section-text">Stranica ordinacije ordinacija za kralježnicu u Mariboru trenutno je privremeno nedostupna. Za informacije o radnom vremenu, terminima ili adresi kontaktirajte nas telefonom na +386 2 123 4567 ili e‑poštom info@osteomed.si. U slučaju hitnih medicinskih situacija nazovite 112 ili se uputite u najbližu hitnu službu. Radne sate recepcije imamo od ponedjeljka do petka od 08:00 do 17:00. Stranicu ažuriramo — zahvaljujemo na razumijevanju.</p><p class="section-text" style="margin-top:14px; opacity:.85;">Ordinacija za kralježnicu u Mariboru, ordinacija Maribor, termin Maribor, kontakt privatna ordinacija za kralježnicu, radno vrijeme Maribor</p><h3 class="faq-title" style="margin:30px 0 16px;">Često postavljana pitanja</h3><div class="faq-list"><details class="faq-item" style="margin:10px 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);"><summary class="faq-question">Zašto je stranica nedostupna?</summary><p class="faq-answer">Stranica je privremeno nedostupna zbog tehničkih radova ili ažuriranja sadržaja. Radimo na otklanjanju problema.</p></details><details class="faq-item" style="margin:10px 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);"><summary class="faq-question">Kako kontaktirati ordinaciji u Mariboru?</summary><p class="faq-answer">Nazovite +386 2 123 4567 ili pošaljite e‑mail na info@osteomed.si. Recepcija radi od ponedjeljka do petka, 08:00–17:00.</p></details><details class="faq-item" style="margin:10px 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);"><summary class="faq-question">Što da učinim u hitnom slučaju?</summary><p class="faq-answer">Za hitne slučajeve odmah nazovite 112 ili idite u najbližu hitnu službu. Ne čekajte ponovno uspostavljanje stranice.</p></details><details class="faq-item" style="margin:10px 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);"><summary class="faq-question">Mogu li promijeniti ili otkazati termin putem e‑maila?</summary><p class="faq-answer">Da. Pošaljite ime pacijenta, datum i vrijeme termina na info@osteomed.si ili nas kontaktirajte telefonom i mi ćemo obraditi vaš zahtjev.</p></details></div></div></section><body><details class="lang-dropdown"><summary aria-label="Izbira jezika / Language" class="lang-dropdown-btn">HR <span>&#9662;</span></summary><div class="lang-dropdown-menu"><a aria-label="Slovenščina" class="lang-option" href="../offline.html" title="Slovenska različica"><span class="code">SL</span>Slovenščina</a><a aria-label="Deutsch" class="lang-option" href="../de/offline.html" title="Deutsche Version"><span class="code">DE</span>Deutsch</a><a aria-label="Hrvatski" class="lang-option active" aria-current="page" href="offline.html" title="Hrvatska verzija"><span class="code">HR</span>Hrvatski</a><a aria-label="Italiano" class="lang-option" href="../it/offline.html" title="Versione italiana"><span class="code">IT</span>Italiano</a><a aria-label="English" class="lang-option" href="../en/offline.html" title="English version"><span class="code">EN</span>English</a></div></details>
+<main class="offline-container">
+<div class="brand">
+ Privatna ordinacija za kralježnicu
+</div>
+<img alt="Privatna ordinacija za kralježnicu – Manualna terapija u Mariboru" class="offline-image" decoding="async" height="1632" loading="lazy" src="../images/osteopatija-pregled-pacienta.webp" width="2176"/>
+<div class="eyebrow">
+ Veza nije dostupna
+</div>
+<h1>
+ ⚠️ Nema internetske veze
+</h1>
+<p>
+ Trenutno niste povezani na internet.
+</p>
+<p>
+ Kad se veza s internetom ponovno uspostavi,
+ pokušajte ponovno učitati stranicu.
+</p>
+<div class="offline-status">
+ Trenutno izvan mreže
+</div>
+<button onclick="window.location.reload()" type="button">
+ 🔄 Pokušajte ponovno
+</button>
+<div class="footer">
+ Manualna terapija · Osteopatija · Maribor
+</div>
+</main>
+</body>
+</html>
